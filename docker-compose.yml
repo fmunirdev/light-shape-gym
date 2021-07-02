@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  # Frontend
+  gym_frontend:
+    container_name: gym_frontend
+    restart: unless-stopped
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8000'
+    volumes:
+      - /myapp/node_modules
+      - ./frontend:/myapp
+    environment:
+      - NODE_ENV=development
+      - GATSBY_WEBPACK_PUBLICPATH=/
