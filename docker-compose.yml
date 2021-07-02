@@ -10,9 +10,58 @@ services:
       dockerfile: Dockerfile
     ports:
       - '8000:8000'
+    networks:
+      - gym_cms_network
+    depends_on:
+      - gym_cms
     volumes:
       - /myapp/node_modules
       - ./frontend:/myapp
     environment:
       - NODE_ENV=development
       - GATSBY_WEBPACK_PUBLICPATH=/
+
+  # CMS
+  gym_cms:
+    image: strapi/strapi
+    container_name: gym_cms
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${CMS_DATABASE_CLIENT}
+      DATABASE_NAME: ${CMS_DATABASE_NAME}
+      DATABASE_HOST: ${CMS_DATABASE_HOST}
+      DATABASE_PORT: ${CMS_DATABASE_PORT}
+      DATABASE_USERNAME: ${CMS_DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${CMS_DATABASE_PASSWORD}
+    networks:
+      - gym_cms_network
+    depends_on:
+      - gym_datastore
+    volumes:
+      - ./cms:/srv/app
+    ports:
+      - '1337:1337'
+
+  # CMS Datastore
+  gym_datastore:
+    image: mongo
+    container_name: gym_datastore
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${CMS_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${CMS_INITDB_ROOT_PASSWORD}
+    networks:
+      - gym_cms_network
+    volumes:
+      - ./cmsdata:/data/db
+    ports:
+      - '27017:27017'
+
+networks:
+  gym_cms_network:
+    driver: bridge
+
+volumes:
+  cmsdata:
