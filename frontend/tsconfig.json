@@ -1,0 +1,45 @@
+{
+  "include": [
+    "./src/**/*"
+  ],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "allowJs": true,
+    "checkJs": false,
+    "jsx": "preserve",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "sourceRoot": "/src",
+    "inlineSources": true,
+    "noEmit": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "typeRoots": [
+      "node_modules/@types",
+      "@types"
+    ],
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@images/*": [
+        "src/images/*"
+      ],
+      "@fonts/*": [
+        "src/fonts/*"
+      ]
+    }
+  }
+}
