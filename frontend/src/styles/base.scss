@@ -1,0 +1,9 @@
+@import './reset';
+@import './variables';
+@import './mixins';
+@import './typography';
+
+a {
+  color: $color-black;
+  text-decoration: none;
+}
