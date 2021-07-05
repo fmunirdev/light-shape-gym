@@ -9,6 +9,12 @@ Run the following command in your command-line within the directory of your choo
 git clone git@github.com:RejaurRahman/light-shape-gym.git
 ```
 
+OR
+
+```
+git clone https://github.com/RejaurRahman/light-shape-gym.git
+```
+
 # Build and Start
 Begin by opening the terminal window and navigate to the root of the repository.
 
