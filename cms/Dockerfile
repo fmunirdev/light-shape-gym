@@ -8,6 +8,6 @@ RUN yarn install
 
 COPY . /app/
 
-EXPOSE 8000
+EXPOSE 1337
 
-CMD [ "yarn", "develop", "-H", "0.0.0.0" ]
+CMD [ "yarn", "develop" ]
