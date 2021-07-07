@@ -28,9 +28,10 @@ services:
       dockerfile: Dockerfile
     environment:
       HOST: ${CMS_HOST}
-      PORT: ${CMS_DATABASE_PORT}
+      PORT: ${CMS_PORT}
       NODE_ENV: ${ENV_TYPE}
       DATABASE_HOST: ${CMS_DATABASE_HOST}
+      DATABASE_PORT: ${CMS_DATABASE_PORT}
       DATABASE_NAME: ${CMS_DATABASE_NAME}
       DATABASE_USERNAME: ${CMS_DATABASE_USERNAME}
       DATABASE_PASSWORD: ${CMS_DATABASE_PASSWORD}
@@ -47,13 +48,13 @@ services:
 
   # CMS Datastore
   gym_datastore:
-    image: mongo
+    image: mongo:4.2
     container_name: gym_datastore
     restart: unless-stopped
     environment:
       MONGO_INITDB_DATABASE: ${CMS_DATABASE_NAME}
-      MONGO_INITDB_ROOT_USERNAME: ${CMS_INITDB_ROOT_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${CMS_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_ROOT_USERNAME: ${CMS_DATABASE_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${CMS_DATABASE_PASSWORD}
     networks:
       - gym_cms_network
     expose:
