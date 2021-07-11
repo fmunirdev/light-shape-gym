@@ -1,7 +1,8 @@
 import React, { ReactNode, FC } from 'react'
 
-import Header from '@components/header/Header'
-import Footer from '@components/footer/Footer'
+import Header from '@components/Layout/Header'
+import Footer from '@components/Layout/Footer'
+import Navigation from "@components/Layout/Navigation";
 
 import * as styles from './default.module.scss'
 
@@ -13,6 +14,7 @@ const DefaultLayout: FC<LayoutProps> = ({ children }) => (
   <>
     <div className={ styles.layout }>
       <Header />
+      <Navigation />
       <main className={ styles.layout__content }>
         { children }
       </main>
