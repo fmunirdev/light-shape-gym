@@ -1,0 +1,84 @@
+// available font weights
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-black: 900;
+
+// available font styles
+$font-style-normal: normal;
+$font-style-italic: italic;
+
+// base font-family
+$font-family-montserrat: 'Montserrat', sans-serif;
+$font-family-primary: $font-family-montserrat;
+
+// base directory with fonts
+$fonts-base: '~/src/fonts';
+$font-montserrat-thin: $fonts-base + '/montserrat/montserrat-thin.woff2';
+$font-montserrat-light: $fonts-base + '/montserrat/montserrat-light.woff2';
+$font-montserrat-regular: $fonts-base + '/montserrat/montserrat-regular.woff2';
+$font-montserrat-italic: $fonts-base + '/montserrat/montserrat-italic.woff2';
+$font-montserrat-medium: $fonts-base + '/montserrat/montserrat-medium.woff2';
+$font-montserrat-bold: $fonts-base + '/montserrat/montserrat-bold.woff2';
+$font-montserrat-black: $fonts-base + '/montserrat/montserrat-black.woff2';
+
+// base font-face rules
+@font-face {
+  font-family: 'Montserrat';
+  src: url($font-montserrat-thin);
+  font-weight: $font-weight-thin;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url($font-montserrat-light);
+  font-weight: $font-weight-light;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url($font-montserrat-regular);
+  font-weight: $font-weight-normal;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url($font-montserrat-italic);
+  font-weight: $font-weight-normal;
+  font-style: $font-style-italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url($font-montserrat-medium);
+  font-weight: $font-weight-medium;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url($font-montserrat-bold);
+  font-weight: $font-weight-bold;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url($font-montserrat-black);
+  font-weight: $font-weight-black;
+  font-style: $font-style-normal;
+  font-display: swap;
+}
+
+$font-body-copy: #{$font-weight-normal to-rem(16) $font-family-primary};

@@ -4,9 +4,9 @@ import * as styles from './Navigation.module.scss'
 const Navigation = () => {
   return (
     <>
-      <navigation className={styles.navigation}>
+      <nav className={styles.navigation}>
         Navigation Component
-      </navigation>
+      </nav>
     </>
   )
 }

@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import DefaultLayout from '@layouts/default'
+import Default from '@layouts/Default'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const IndexPage = () => (
-  <DefaultLayout>
+  <Default>
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
@@ -16,7 +16,7 @@ const IndexPage = () => (
       alt="A Gatsby astronaut"
       style={{ marginBottom: `1.45rem` }}
     />
-  </DefaultLayout>
+  </Default>
 )
 
 export default IndexPage

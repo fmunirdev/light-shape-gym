@@ -1,16 +1,16 @@
 import React, { ReactNode, FC } from 'react'
 
 import Header from '@components/Layout/Header'
+import Navigation from '@components/Layout/Navigation'
 import Footer from '@components/Layout/Footer'
-import Navigation from "@components/Layout/Navigation";
 
-import * as styles from './default.module.scss'
+import * as styles from './Default.module.scss'
 
 interface LayoutProps {
   children: ReactNode
 }
 
-const DefaultLayout: FC<LayoutProps> = ({ children }) => (
+const Default: FC<LayoutProps> = ({ children }) => (
   <>
     <div className={ styles.layout }>
       <Header />
@@ -23,4 +23,4 @@ const DefaultLayout: FC<LayoutProps> = ({ children }) => (
   </>
 )
 
-export default DefaultLayout
+export default Default

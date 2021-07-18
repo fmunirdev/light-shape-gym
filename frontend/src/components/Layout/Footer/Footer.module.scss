@@ -1,4 +1,9 @@
 .footer {
-  background-color: $color-steel-grey;
-  padding: to-rem(30) to-rem(0);
+  background-color: $color-purple-lily;
+
+  &__container {
+    @include breakpoint(min-width, smallDesktop) {
+      @include layout-wrapper;
+    }
+  }
 }
