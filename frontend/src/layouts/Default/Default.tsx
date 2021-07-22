@@ -4,7 +4,7 @@ import Header from '@components/Layout/Header'
 import Navigation from '@components/Layout/Navigation'
 import Footer from '@components/Layout/Footer'
 
-import * as styles from './Default.module.scss'
+import styles from './Default.module.scss'
 
 interface LayoutProps {
   children: ReactNode

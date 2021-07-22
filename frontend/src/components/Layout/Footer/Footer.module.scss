@@ -1,5 +1,6 @@
 .footer {
   background-color: $color-purple-lily;
+  color: $color-white;
 
   &__container {
     @include breakpoint(min-width, smallDesktop) {

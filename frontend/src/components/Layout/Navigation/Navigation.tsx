@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from './Navigation.module.scss'
+import styles from './Navigation.module.scss'
 
 const Navigation = () => {
   return (

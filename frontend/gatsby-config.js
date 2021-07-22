@@ -37,9 +37,13 @@ module.exports = {
           includePaths: [`${__dirname}/src/styles`]
         },
         cssLoaderOptions: {
-          camelCase: false
-        }
-      }
+          camelCase: false,
+          esModule: false,
+          modules: {
+            namedExport: false,
+          },
+        },
+      },
     },
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
